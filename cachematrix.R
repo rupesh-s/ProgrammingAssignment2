@@ -5,7 +5,7 @@
 
 ## Function to create a matrix to cache it's  inverse
 ## input data type: matrix
-## return data type : matrix
+## return data type : vector of functions associated with input matrix
 makeCacheMatrix <- function(x = matrix()) {
   ## initialize a cache to store the inverse of the matrix
   localCache <- NULL
@@ -26,8 +26,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## Function to generate the inverse of a matrix 
-## input data type : matrix
-## return data type : matrix
+## input data type : vector of functions associated with a matrix 
+##                  (return value of makeCacheMatrix)
+## return data type : matrix (inverse of the input for makeCacheMatrix)
 cacheSolve <- function(x, ...) {
   inversematrix <- x$getInverse()
   
